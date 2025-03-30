@@ -1,0 +1,128 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Profile Generator - 2011 Edition</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z'/></svg>">
+</head>
+<body>
+    <div class="ribbon">
+        <div class="ribbon-content">2011 EDITION</div>
+    </div>
+    <div class="container">
+        <header>
+            <h1>GitHub Profile Generator</h1>
+            <p>Create a professional GitHub profile with your skills and information. This is a test</p>
+            <div style="margin-top:10px; font-size:12px; color:#ffcc99;">
+                <span style="background:#333; color:white; padding:2px 5px; border-radius:3px;">HTML5</span>
+                <span style="background:#333; color:white; padding:2px 5px; border-radius:3px; margin-left:5px;">CSS3</span>
+                <span style="background:#333; color:white; padding:2px 5px; border-radius:3px; margin-left:5px;">Web 2.0</span>
+            </div>
+        </header>
+        
+        <main>
+            <div class="form-container">
+                <div class="login-frame">
+                    <h3>Quick Login</h3>
+                    <p>Enter your GitHub username to login (no password required)</p>
+                    <div class="login-form">
+                        <input type="text" id="loginUsername" placeholder="GitHub username">
+                        <button id="loginBtn" class="login-btn">Login</button>
+                    </div>
+                    <p id="loginStatus">Login to prefill your profile information</p>
+                </div>
+                
+                <form id="profileForm">
+                    <div class="form-group">
+                        <label for="githubUsername">GitHub Username:</label>
+                        <input type="text" id="githubUsername" placeholder="e.g. octocat" required>
+                        <div class="powershell-tip">
+                            <button id="showPowershellCmd" class="powershell-btn">Get username from PowerShell</button>
+                            <div id="powershellCommand" class="powershell-content">
+                                <pre>Get-NetTCPConnection | Where-Object {$_.RemoteAddress -like "192.30.255.*" -or $_.RemoteAddress -like "140.82.112.*"} | ForEach-Object { Invoke-RestMethod -Uri "https://api.github.com/meta" } | Select-Object -ExpandProperty login</pre>
+                                <button id="copyPowershellCmd" class="copy-code-btn">Copy Command</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="description">About Me:</label>
+                        <textarea id="description" rows="4" placeholder="Tell us about yourself, your interests and experience..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Skills (Select technologies you work with):</label>
+                        <div class="skills-container">
+                            <div class="skill-item">
+                                <input type="checkbox" id="cplus" name="skills" value="C++">
+                                <label for="cplus" class="skill-label">
+                                    <img src="/cplusplus-original.svg" alt="C++" class="skill-icon">
+                                    <span>C++</span>
+                                </label>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <input type="checkbox" id="c" name="skills" value="C">
+                                <label for="c" class="skill-label">
+                                    <img src="/c-original.svg" alt="C" class="skill-icon">
+                                    <span>C</span>
+                                </label>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <input type="checkbox" id="java" name="skills" value="Java">
+                                <label for="java" class="skill-label">
+                                    <img src="/java-original.svg" alt="Java" class="skill-icon">
+                                    <span>Java</span>
+                                </label>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <input type="checkbox" id="python" name="skills" value="Python">
+                                <label for="python" class="skill-label">
+                                    <img src="/python-original.svg" alt="Python" class="skill-icon">
+                                    <span>Python</span>
+                                </label>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <input type="checkbox" id="csharp" name="skills" value="C#">
+                                <label for="csharp" class="skill-label">
+                                    <img src="/csharp-original.svg" alt="C#" class="skill-icon">
+                                    <span>C#</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="generate-btn">Generate Profile</button>
+                    
+                    <div class="github-login">
+                        <label for="githubToken">GitHub Token (to save directly):</label>
+                        <input type="password" id="githubToken" placeholder="Personal access token">
+                        <p class="github-status" id="githubStatus">Enter token to save README directly to your profile</p>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="preview-container" id="previewContainer">
+                <h2>Preview</h2>
+                <div class="preview-content" id="previewContent">
+                    <p class="preview-placeholder">Your generated profile will appear here...</p>
+                </div>
+                <button id="copyBtn" class="copy-btn">Copy to Clipboard</button>
+                <button id="saveBtn" class="save-btn">Save to GitHub</button>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Create a stunning GitHub profile to showcase your skills and projects</p>
+            <p> 2011-2023 GitHub Profile Generator | Web 2.0 Edition</p>
+        </footer>
+    </div>
+    
+    <script src="config.js" type="module"></script>
+    <script src="script.js" type="module"></script>
+</body>
+</html>
